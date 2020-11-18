@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,60 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoSelect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-Hb-NJh">
+                                <rect key="frame" x="132.66666666666666" y="74" width="110" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="PbU-8X-zua"/>
+                                    <constraint firstAttribute="height" constant="48" id="zt8-7d-RBy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bmA-hn-38r">
+                                <rect key="frame" x="32.666666666666657" y="132" width="310" height="410"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="Vm7-t3-A4R"/>
+                                    <constraint firstAttribute="height" constant="410" id="vYh-1o-8od"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH3-lV-Kfb">
+                                <rect key="frame" x="142.66666666666666" y="582" width="90" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.87667360149999995" blue="0.79886159079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Ds3-iX-MQJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wsh-IG-P7E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JVX-Dg-Sgb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.9571587981480435" blue="0.93692247061362421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="b3Y-Hb-NJh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FDW-kA-dML"/>
+                            <constraint firstItem="b3Y-Hb-NJh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="JEm-dv-ehq"/>
+                            <constraint firstItem="iH3-lV-Kfb" firstAttribute="top" secondItem="bmA-hn-38r" secondAttribute="bottom" constant="40" id="dCh-PE-td2"/>
+                            <constraint firstItem="iH3-lV-Kfb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="loN-f8-STd"/>
+                            <constraint firstItem="bmA-hn-38r" firstAttribute="top" secondItem="b3Y-Hb-NJh" secondAttribute="bottom" constant="10" id="od3-pa-KF5"/>
+                            <constraint firstItem="bmA-hn-38r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ukc-bw-hHA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="bmA-hn-38r" id="52G-2z-1uZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="111.57635467980296"/>
         </scene>
     </scenes>
 </document>
